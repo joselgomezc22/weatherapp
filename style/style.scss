@@ -114,9 +114,14 @@ $desktop-width: 1024px;
     background: $secondary-color;
     background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(117,180,227,1) 100%);
 }
- 
-// basics
-.search-input{
+// Search Box
+.search-box{
+  &img{ 
+    width: 40px;
+  }
+
+}
+ .search-input{
     width: 100%;
     border: none;
     border-bottom: 1px solid #f1f1f1;
@@ -130,6 +135,8 @@ $desktop-width: 1024px;
     transition: all .5s ease;
     font-family: $Questrial;
   }
+// basics
+
 .logo{
     width: 100px;
 }
@@ -152,6 +159,7 @@ $desktop-width: 1024px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+     
   }
 .container-fullwidt{
      
@@ -176,5 +184,78 @@ $desktop-width: 1024px;
     color: white;
     border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.07);
+    transition: all .5s ease;
+    &*{
+      transition: all .5s ease;
+    }
      
+}
+
+
+/****/
+#main-weather-card {
+  width: 100%;
+
+  & h3:nth-child(1){
+    font-size: 3rem;
+    @media screen and (max-width: 900px) {
+      & {
+        text-align: center;
+      }
+    }
+  }
+
+  & h3:nth-child(2){
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    font-weight: 800;
+    @media screen and (max-width: 900px) {
+      & {
+        text-align: center;
+      }
+    }
+  }
+  
+  & h3 .description{
+    font-size: 3rem;
+    text-align: right;
+    @media screen and (max-width: 900px) {
+      & {
+        text-align: center;
+      }
+    }
+  }
+  
+  & h1 {
+    font-size: 9rem;
+    margin: 15px auto;
+    background-color: #31255a;
+    display: inline-block;
+    padding: 30px 30px;
+    border-radius: 150px;
+    border-left: solid 15px #fff;
+    border-right: solid 15px #fff;
+    text-align: rigth;
+
+    @media screen and (max-width: 900px) {
+      & {
+        font-size: 5rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.text-header {
+  font-size: 5rem;
+  margin: 30px auto;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+
+  @media screen and (max-width: 900px) {
+    & {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
 }

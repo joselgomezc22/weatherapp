@@ -22,8 +22,11 @@
                 <H1>WEATHER FRONT WEB</H1> 
             </div>
             <div>
-                <input class="search-input" placeholder="Custom search" type="text"> 
-             </div>
+                <div class="search-box">
+                    <input id="customsearch-input" class="search-input" placeholder="Custom search" type="text">
+                    <button id="customsearch-button"><img src="media/search-icon.svg"/></button>    
+                </div>   
+            </div>
             
         </div>
     </header>
@@ -31,7 +34,7 @@
       <section class="">
         <div >
             <div >
-                <div class="grid-section">
+                <div >
                     <div>
                         <!-- Bogota Time Today-->
                         <div class="card-transparent padding-small">
@@ -39,9 +42,6 @@
                                 
                             </div>
                         </div>
-                    </div>
-                    <div>
-
                     </div>
                 </div>
             </div>
@@ -51,14 +51,9 @@
     </section>
     <section>
         <div class="grid-section">
-            <div>
-                <div>
-                    <h1>3 DAYS FORECAST </h1>
-                </div>
-                <div id="forecast" class="grid-section">
+             <div id="forecast-main" >
 
-                </div>  
-            </div>
+             </div>
             <div>
                 <div id="paris-wheader" class="grid-section">
 
