@@ -50,7 +50,8 @@ function appendForecastWheaterHtml(cardId,json,type){
         let description = data.description;
         let icon = data.icon;
          html += `
-        <div class="card-transparent padding-small">
+         <div class="padding-small">
+         <div class="card-transparent ">
             <div id="main-weather-card" class="grid-section">
 
 
@@ -68,6 +69,7 @@ function appendForecastWheaterHtml(cardId,json,type){
             
             </div>
         </div>
+        </div>
                         `;
           
     });
@@ -76,4 +78,5 @@ function appendForecastWheaterHtml(cardId,json,type){
 }
 
 appendBannerWheaterHtml('main-weather-card',httpGet('https://api.openweathermap.org/data/2.5/weather?q=bogota&appid=2c689ad51f75b6467af0c2069385327d&units=metric'),1);
+appendBannerWheaterHtml('paris-wheader',httpGet('https://api.openweathermap.org/data/2.5/weather?q=paris&appid=2c689ad51f75b6467af0c2069385327d&units=metric'),1);
 appendForecastWheaterHtml('forecast',httpGet('https://api.openweathermap.org/data/2.5/forecast?q=bogota&appid=2c689ad51f75b6467af0c2069385327d&cnt=3&units=metric'),1);
