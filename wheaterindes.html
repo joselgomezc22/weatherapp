@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sneak</title>
-    <link rel="icon" type="image/png" href="./media/icon.png" sizes="16x16">
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Weather</title>
+    <link rel="icon" type="image/png" href="./media/favicon.ico" sizes="16x16">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
-<body>
-    <section>
-        <h1>HELLO</h1>
+<body> 
+    <header>
+        <div class="container background-primary padding-small grid-section">
+            <div class="grid-section">
+                <div>
+                    <a class="" href="#">
+                        <img class="logo" src="media/logo.png" alt=""> 
+                    </a>
+                </div>
+            </div>
+            <div>
+                <H1>WEATHER FRONT WEB</H1> 
+            </div>
+            <div>
+                <input class="search-input" placeholder="Custom search" type="text"> 
+             </div>
+            
+        </div>
+    </header>
+    <main class="background-main main-section padding-large">
+      <section class="">
+        <div >
+            <div >
+                <div class="grid-section">
+                    <div>
+                        <!-- Bogota Time Today-->
+                        <div class="card-transparent padding-small">
+                            <div id="main-weather-card" class="grid-section">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+       
     </section>
+    <section>
+        <div>
+            <h1>3 DAYS FORECAST </h1>
+        </div>
+        <div id="forecast" class="grid-section">
+
+        </div>
+    </section>  
+    </main>
+    
+    <script type="text/javascript" src="./assets/index.js"></script>
 </body>
 </html>
