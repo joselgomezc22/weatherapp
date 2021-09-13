@@ -48,10 +48,13 @@ table {
 	border-spacing: 0;
 }
 
+
 //Main colors
 $primary-color: #31255a;
 $muted-color  : #8fe0ff;
 $secondary-color: #75b4e3;
+$light-text-color: #fff;
+$transparend-card-color: rgba(0, 0, 0, 0.07);
 $main-bg-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 34%, rgba(0,212,255,1) 100%);;
 
 //Font Families
@@ -66,6 +69,10 @@ p,h1{
   h2,h3,h4,h5,h6,span,a{
     font-family: $Questrial;
     letter-spacing: 2px;
+  }
+  a{
+    text-decoration: none;
+    color: $primary-color;
   }
 
 // Responsive mixins
@@ -108,7 +115,7 @@ $desktop-width: 1024px;
 // backgrounds 
 .background-primary{
     background-color: $primary-color;
-    color: white;
+    color: $light-text-color;
 }
 .background-main{
     background: $secondary-color;
@@ -116,32 +123,123 @@ $desktop-width: 1024px;
 }
 // Search Box
 .search-box{
-  &img{ 
-    width: 40px;
+  
+  background-color: $transparend-card-color;
+  border: 1px solid #f1f1f1;
+  button{ 
+    border: none;
+    background: $muted-color;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    &:hover {
+      border: solid 2px $secondary-color;
+    }
+    
+    img{
+      width: 20px;
+    }
   }
+  .search-input{
+     width: 100%;
+     border: none;
+     
+     &::placeholder{
+         color: $light-text-color;   
+         font-family: "Montserrat", sans-serif;
+         letter-spacing: 2px;
+     }
+     outline: none;
+     color: $light-text-color;
+     background: transparent;
+     padding: 15px 10px;
+     transition: all .5s ease;
+     font-family: $Questrial;
+   }
 
 }
- .search-input{
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #f1f1f1;
-    &::placeholder{
-        color: white;   
-    }
-    outline: none;
-    color: white;
-    background: transparent;
-    padding: 15px 10px;
-    transition: all .5s ease;
-    font-family: $Questrial;
-  }
 // basics
+.card-france{
+  color: $light-text-color;
+  &.temperature{
+    font-size: 1rem;
+  }
+  border-radius: 6px;
+  background: rgb(1,24,255);
+background: linear-gradient(87deg, rgba(1,24,255,0.13535836697960435) 0%, rgba(227,117,117,0.33143679835215334) 100%);
+  & h3:nth-child(1){
+    font-size: 1rem;
+     @include phone(){
+        text-align: center; 
+     }
+     @include tablet(){
+        text-align: center; 
+     }
+        
+       
+  }
 
+  & h3:nth-child(2){
+    font-size: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 800;
+    @include phone(){
+        text-align: center; 
+     }
+     @include tablet(){
+        text-align: center; 
+     }
+  }
+  
+  & h3 .description{
+    font-size: 1rem;
+    text-align: right;
+    @include phone(){
+      text-align: center; 
+   }
+   @include tablet(){
+      text-align: center; 
+   }
+  }
+}
+.text-bold{
+  font-weight: 600;
+}
+.text-center{
+  text-align: center;
+}
+.text-header {
+  font-size: 5rem;
+  margin: 30px auto;
+  color: $light-text-color;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+    @include phone(){
+      font-size: 2rem;
+      text-align: center;
+    }  
+}
+.text-header-secondary {
+  font-size: 2rem;
+  margin: 10px auto;
+  color: $light-text-color;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+    @include phone(){
+      font-size: 2rem;
+      text-align: center;
+    }  
+}
 .logo{
     width: 100px;
 }
 .padding-small{
     padding: 15px;
+}
+
+.padding-small-m{
+  @include phone(){
+    padding: 10px;
+  }
 }
 .padding-large{
     @include desktop(){
@@ -155,11 +253,23 @@ $desktop-width: 1024px;
     }
     
 }
+// Grids
 .grid-section{
     display: flex;
     justify-content: space-between;
     align-items: center;
      
+  }
+  // Responsive grids directions
+  .grid-responsive-m{
+    @include phone(){
+      flex-direction: column !important;
+    }
+  }
+  .grid-responsive-t{
+    @include tablet(){
+      flex-direction: column !important;
+    }
   }
 .container-fullwidt{
      
@@ -177,53 +287,42 @@ $desktop-width: 1024px;
 
 .main-section{
     min-height: 100vh;
-}
+} 
 
 .card-transparent {
     width: 100%;
-    color: white;
+    color: $light-text-color;
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.07);
-    transition: all .5s ease;
-    &*{
-      transition: all .5s ease;
-    }
+    background-color: $transparend-card-color;
      
 }
 
 
-/****/
+/*Some 3 Forecast Details*/
+#forecast-main .card-transparent{
+  @include phone(){
+    width: 350px;
+  }
+}
+ 
+/*Some Banner Details*/
 #main-weather-card {
   width: 100%;
-
   & h3:nth-child(1){
     font-size: 3rem;
-    @media screen and (max-width: 900px) {
-      & {
-        text-align: center;
-      }
-    }
+     
+      
   }
-
   & h3:nth-child(2){
     font-size: 2.5rem;
     margin-top: 1rem;
     font-weight: 800;
-    @media screen and (max-width: 900px) {
-      & {
-        text-align: center;
-      }
-    }
+    
   }
-  
   & h3 .description{
     font-size: 3rem;
     text-align: right;
-    @media screen and (max-width: 900px) {
-      & {
-        text-align: center;
-      }
-    }
+   
   }
   
   & h1 {
@@ -236,26 +335,18 @@ $desktop-width: 1024px;
     border-left: solid 15px #fff;
     border-right: solid 15px #fff;
     text-align: rigth;
-
-    @media screen and (max-width: 900px) {
-      & {
-        font-size: 5rem;
-        text-align: center;
-      }
-    }
+    @include phone(){
+      font-size: 5rem;
+   
+   }
+   @include tablet(){
+    font-size: 5rem;
+   
+   }
+  }
+  @include phone(){
+    flex-direction: column !important;
+    text-align: center;
   }
 }
 
-.text-header {
-  font-size: 5rem;
-  margin: 30px auto;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,.5);
-
-  @media screen and (max-width: 900px) {
-    & {
-      font-size: 2rem;
-      text-align: center;
-    }
-  }
-}

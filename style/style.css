@@ -53,6 +53,10 @@ h2, h3, h4, h5, h6, span, a {
   font-family: "Questrial", sans-serif;
   letter-spacing: 2px; }
 
+a {
+  text-decoration: none;
+  color: #31255a; }
+
 @media (min-width: 280px) and (max-width: 767px) {
   .mobile-hidden {
     display: none; } }
@@ -66,33 +70,110 @@ h2, h3, h4, h5, h6, span, a {
 
 .background-primary {
   background-color: #31255a;
-  color: white; }
+  color: #fff; }
 
 .background-main {
   background: #75b4e3;
   background: radial-gradient(circle, #22c1c3 0%, #75b4e3 100%); }
 
-.search-boximg {
-  width: 40px; }
+.search-box {
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 1px solid #f1f1f1; }
+  .search-box button {
+    border: none;
+    background: #8fe0ff;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer; }
+    .search-box button:hover {
+      border: solid 2px #75b4e3; }
+    .search-box button img {
+      width: 20px; }
+  .search-box .search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    padding: 15px 10px;
+    transition: all .5s ease;
+    font-family: "Questrial", sans-serif; }
+    .search-box .search-input::placeholder {
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 2px; }
 
-.search-input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #f1f1f1;
-  outline: none;
-  color: white;
-  background: transparent;
-  padding: 15px 10px;
-  transition: all .5s ease;
-  font-family: "Questrial", sans-serif; }
-  .search-input::placeholder {
-    color: white; }
+.card-france {
+  color: #fff;
+  border-radius: 6px;
+  background: #0118ff;
+  background: linear-gradient(87deg, rgba(1, 24, 255, 0.135358367) 0%, rgba(227, 117, 117, 0.3314367984) 100%); }
+  .card-france.temperature {
+    font-size: 1rem; }
+  .card-france h3:nth-child(1) {
+    font-size: 1rem; }
+    @media (min-width: 280px) and (max-width: 767px) {
+      .card-france h3:nth-child(1) {
+        text-align: center; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .card-france h3:nth-child(1) {
+        text-align: center; } }
+  .card-france h3:nth-child(2) {
+    font-size: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 800; }
+    @media (min-width: 280px) and (max-width: 767px) {
+      .card-france h3:nth-child(2) {
+        text-align: center; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .card-france h3:nth-child(2) {
+        text-align: center; } }
+  .card-france h3 .description {
+    font-size: 1rem;
+    text-align: right; }
+    @media (min-width: 280px) and (max-width: 767px) {
+      .card-france h3 .description {
+        text-align: center; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .card-france h3 .description {
+        text-align: center; } }
+
+.text-bold {
+  font-weight: 600; }
+
+.text-center {
+  text-align: center; }
+
+.text-header {
+  font-size: 5rem;
+  margin: 30px auto;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .text-header {
+      font-size: 2rem;
+      text-align: center; } }
+
+.text-header-secondary {
+  font-size: 2rem;
+  margin: 10px auto;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .text-header-secondary {
+      font-size: 2rem;
+      text-align: center; } }
 
 .logo {
   width: 100px; }
 
 .padding-small {
   padding: 15px; }
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .padding-small-m {
+    padding: 10px; } }
 
 @media (min-width: 1024px) {
   .padding-large {
@@ -108,6 +189,14 @@ h2, h3, h4, h5, h6, span, a {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .grid-responsive-m {
+    flex-direction: column !important; } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-responsive-t {
+    flex-direction: column !important; } }
 
 .container-fullwidt {
   margin: 0 auto; }
@@ -126,34 +215,27 @@ h2, h3, h4, h5, h6, span, a {
 
 .card-transparent {
   width: 100%;
-  color: white;
+  color: #fff;
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.07);
-  transition: all .5s ease; }
-  .card-transparent* {
-    transition: all .5s ease; }
+  background-color: rgba(0, 0, 0, 0.07); }
 
-/****/
+/*Some 3 Forecast Details*/
+@media (min-width: 280px) and (max-width: 767px) {
+  #forecast-main .card-transparent {
+    width: 350px; } }
+
+/*Some Banner Details*/
 #main-weather-card {
   width: 100%; }
   #main-weather-card h3:nth-child(1) {
     font-size: 3rem; }
-    @media screen and (max-width: 900px) {
-      #main-weather-card h3:nth-child(1) {
-        text-align: center; } }
   #main-weather-card h3:nth-child(2) {
     font-size: 2.5rem;
     margin-top: 1rem;
     font-weight: 800; }
-    @media screen and (max-width: 900px) {
-      #main-weather-card h3:nth-child(2) {
-        text-align: center; } }
   #main-weather-card h3 .description {
     font-size: 3rem;
     text-align: right; }
-    @media screen and (max-width: 900px) {
-      #main-weather-card h3 .description {
-        text-align: center; } }
   #main-weather-card h1 {
     font-size: 9rem;
     margin: 15px auto;
@@ -164,19 +246,15 @@ h2, h3, h4, h5, h6, span, a {
     border-left: solid 15px #fff;
     border-right: solid 15px #fff;
     text-align: rigth; }
-    @media screen and (max-width: 900px) {
+    @media (min-width: 280px) and (max-width: 767px) {
       #main-weather-card h1 {
-        font-size: 5rem;
-        text-align: center; } }
-
-.text-header {
-  font-size: 5rem;
-  margin: 30px auto;
-  color: white;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-  @media screen and (max-width: 900px) {
-    .text-header {
-      font-size: 2rem;
+        font-size: 5rem; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #main-weather-card h1 {
+        font-size: 5rem; } }
+  @media (min-width: 280px) and (max-width: 767px) {
+    #main-weather-card {
+      flex-direction: column !important;
       text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */

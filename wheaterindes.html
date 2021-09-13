@@ -10,21 +10,24 @@
 </head>
 <body> 
     <header>
-        <div class="container background-primary padding-small grid-section">
-            <div class="grid-section">
+        <div class="container background-primary padding-small grid-section grid-responsive-m">
+            <div class="grid-section ">
                 <div>
                     <a class="" href="#">
                         <img class="logo" src="media/logo.png" alt=""> 
                     </a>
                 </div>
             </div>
-            <div>
-                <H1>WEATHER FRONT WEB</H1> 
+            <div class="">
+                <H1>WEATHER WEB</H1> 
             </div>
-            <div>
-                <div class="search-box">
+            <div class="padding-small-m"> 
+                <div class="search-box grid-section">
                     <input id="customsearch-input" class="search-input" placeholder="Custom search" type="text">
-                    <button id="customsearch-button"><img src="media/search-icon.svg"/></button>    
+                    <div>
+                      <button title="Search term" id="customsearch-button"><img src="media/search-icon.svg"/></button>   
+                    </div>
+                       
                 </div>   
             </div>
             
@@ -50,20 +53,32 @@
        
     </section>
     <section>
-        <div class="grid-section">
+        <div class="grid-section grid-responsive-m grid-responsive-t">
              <div id="forecast-main" >
 
              </div>
             <div>
-                <div id="paris-wheader" class="grid-section">
+                <div class="card-france padding-small">
+                    <div title="Paris Wheater" class="text-header-secondary grid-section">
+                        <h1 >OUR WORKMATES WEATHER</h1>
+                        <img src="https://www.countryflags.io/fr/shiny/24.png" alt="">
+                    </div>
+                    
+                    
+                    <div id="paris-wheader" class="grid-section">
 
-                </div> 
+                    </div>   
+                </div>
+                
             </div> 
         </div>
         
         
     </section>  
     </main>
+    <footer class="text-center">
+        <p class="padding-small text-secondary">© 2021 Copyright <a href="https://www.gradiweb.com/"  target="_BLANK" class="text-bold">Gradiweb.</a>  Made with love and coffee.</p>
+    </footer>
     
     <script type="text/javascript" src="./assets/index.js"></script>
 </body>
