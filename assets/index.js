@@ -110,10 +110,16 @@ const apiToken = '2c689ad51f75b6467af0c2069385327d';
 // Get Current wheater, cords and daily forecast by a cityname 
 function GetGlobalWeather(cityname,apiuri,apitkn){
     let current = httpGet(apiuri+'weather?appid='+apitkn+'&units=metric&q='+cityname);
-    let city    =  current.name;
+    console.log(current.cod);
+    if(current.cod == 200){
+        let city    =  current.name;
     let coords  =  current.coord;
     let daily   = httpGet(apiuri+'onecall?appid='+apitkn+'&lat='+coords.lat+'&lon='+coords.lon+'&exclude=hourly,current,minutely&units=metric');
     return {'current':current,'daily':daily.daily,'city':city};
+    }else{
+        alert(cityname+' Not finded')
+    }
+    
 }
 console.log(GetGlobalWeather('toronto',ApiUrl,apiToken));
 
